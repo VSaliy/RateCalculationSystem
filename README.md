@@ -19,4 +19,4 @@ for compile JDK 8
 ```mvn clean install```
 
 for execution JRE 8
-``` java -jar target/RateCalculationSystem-1.0-SNAPSHOT-jar-with-dependencies.jar 'Market Data for Exercise - .csv.csv' 1000```
+``` java -jar target/RateCalculationSystem-1.0-SNAPSHOT-jar-with-dependencies.jar "Market Data for Exercise - .csv.csv" 1000```
