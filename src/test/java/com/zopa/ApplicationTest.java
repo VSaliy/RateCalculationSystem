@@ -34,32 +34,31 @@ public class ApplicationTest {
 	}
 
 	@Test
-	public void processNonValidFilenameThrowException() {
+	public void processNonValidFilenameGetExceptionMessage() {
 		String[] args = new String[] {DROKEN_FILE_NAME, "10000"};
 		Application.main(args);
 		assertTrue(consoleOutput.toString().contains("market.csv (The system cannot find the file specified)"));
 	}
 
 	@Test
-	public void processUpperRangeThrowException() {
+	public void processUpperRangeGetExceptionMessage() {
 		String[] args = new String[] {OFFERS_FILE, "100000"};
 		Application.main(args);
 		assertTrue(consoleOutput.toString().contains("Sorry, only able to request a loan betwen £1000 and £15000"));
 	}
 
 	@Test
-	public void processLowerRangeThrowException() {
+	public void processLowerRangeGetExceptionMessage() {
 		String[] args = new String[] {OFFERS_FILE, "500"};
 		Application.main(args);
 		assertTrue(consoleOutput.toString().contains("Sorry, only able to request a loan betwen £1000 and £15000"));
 	}
 
 	@Test
-	public void processIncrementAmountThrowException() {
+	public void processIncrementAmountGetExceptionMessage() {
 		String[] args = new String[] {OFFERS_FILE, "1325"};
 		Application.main(args);
 		assertTrue(consoleOutput.toString().contains("Sorry, only able to request a loan of any £100"));
 	}
-
 
 }
