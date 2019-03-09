@@ -2,40 +2,25 @@ package com.zopa.view;
 
 import java.math.BigDecimal;
 
-public class LoanResult {
+public interface LoanResult {
+	BigDecimal getRequestedAmount();
 
-	private BigDecimal requestedAmount;
-	private BigDecimal rate;
-	private BigDecimal monthlyRepayment;
-	private BigDecimal totalRepayment;
-	private String exceptionMessage;
+	void setRequestedAmount(BigDecimal requestedAmount);
 
-	public void setRequestedAmount(BigDecimal requestedAmount) {
-		this.requestedAmount = requestedAmount;
-	}
+	BigDecimal getRate();
 
-	public void setRate(BigDecimal rate) {
-		this.rate = rate;
-	}
+	void setRate(BigDecimal rate);
 
-	public void setMonthlyRepayment(BigDecimal monthlyRepayment) {
-		this.monthlyRepayment = monthlyRepayment;
-	}
+	BigDecimal getMonthlyRepayment();
 
-	public void setTotalRepayment(BigDecimal totalRepayment) {
-		this.totalRepayment = totalRepayment;
-	}
+	void setMonthlyRepayment(BigDecimal monthlyRepayment);
 
-	public void setExceptionMessage(String exceptionMessage) {
-		this.exceptionMessage = exceptionMessage;
-	}
+	BigDecimal getTotalRepayment();
 
-	@Override
-	public String toString() {
-		return exceptionMessage != null && !exceptionMessage.isEmpty() ? exceptionMessage :
-				"Requested amount:£" + requestedAmount + "\n" +
-						"Rate:" + rate + "%\n" +
-						"Monthly repayment:£" + monthlyRepayment + "\n" +
-						"Total repayment:£" + totalRepayment;
-	}
+	void setTotalRepayment(BigDecimal totalRepayment);
+
+	String getExceptionMessage();
+
+	void setExceptionMessage(String exceptionMessage);
+
 }

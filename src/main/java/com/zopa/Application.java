@@ -1,21 +1,26 @@
 package com.zopa;
 
-import com.zopa.view.LoanResult;
+import com.zopa.view.LoanResultImpl;
 import com.zopa.controller.RateCalculationSystem;
 import static com.zopa.config.QuoteConstant.UPPER_RANGE;
 import static com.zopa.config.QuoteConstant.LOWER_RANGE;
 import static com.zopa.config.QuoteConstant.INCREMENT_AMOUNT;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Application {
 
+	private static Logger logger = LoggerFactory.getLogger(Application.class);
+
 	public static void main(String[] args) {
-		LoanResult loanResult = new LoanResult();
+		LoanResultImpl loanResult = new LoanResultImpl();
 		try {
 			validateParams(args);
 		} catch (IllegalStateException e) {
 			loanResult.setExceptionMessage(e.getMessage());
 		}
 		new RateCalculationSystem().process(args[0], args[1], loanResult);
+		logger.info(loanResult.toString());
 		System.out.println(loanResult);
 	}
 

@@ -2,6 +2,9 @@ package com.zopa.config;
 
 public class QuoteConstant {
 
+	private QuoteConstant() {
+	}
+
 	public static final int INCREMENT_AMOUNT = 100;
 	public static final int LOWER_RANGE = 1000;
 	public static final int UPPER_RANGE = 15000;

@@ -23,14 +23,14 @@ public class ApplicationTest {
 	public void calculateLoan() {
 		String[] args = new String[] {OFFERS_FILE, "1000"};
 		Application.main(args);
-		assertTrue(consoleOutput.toString().contains("Requested amount:£1000.000"));
+		assertTrue(consoleOutput.toString().contains("Requested amount: £1000.000"));
 	}
 
 	@Test
 	public void processOffersWithEmptyCells() {
 		String[] args = new String[] {DROKEN_OFFERS_FILE, "1000"};
 		Application.main(args);
-		assertTrue(consoleOutput.toString().contains("Requested amount:£1000.000"));
+		assertTrue(consoleOutput.toString().contains("Requested amount: £1000.000"));
 	}
 
 	@Test
